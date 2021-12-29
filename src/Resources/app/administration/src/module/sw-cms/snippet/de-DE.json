@@ -1,0 +1,46 @@
+{
+  "sw-cms": {
+    "blocks": {
+      "ak-blog": {
+        "label": "Blog",
+        "labelForm": "Ak Bilden",
+        "listProduct": "Ak Blog list Product"
+      }
+    },
+
+    "elements": {
+      "ak-blog": {
+        "label": "Blog",
+        "more": "Mehr...",
+        "labelForm": "Ak Bilden",
+
+
+        "config": {
+          "category": "Kategorie",
+          "backgroundColor": "Hintergrundfarbe",
+          "numberofposts": {
+            "title": "Anzahl Posts",
+            "help": "0 für keine Beschränkung / alle"
+          },
+          "sortorder": {
+            "title": "Sortierung",
+            "desc": "Neueste Posts zuerst",
+            "asc": "Älteste Posts zuerst"
+          },
+          "layout": {
+            "title": "Layout (Blog-Übersicht)",
+            "cards": "Kartenansicht",
+            "list": "Listenansicht",
+            "slider": "Slider"
+          },
+          "imageMode": {
+            "title": "Bild-Modus",
+            "cover": "feste Bildgröße (cover)",
+            "contain": "gesamtes Bild (contain)"
+          }
+        }
+      }
+    }
+  }
+}
+

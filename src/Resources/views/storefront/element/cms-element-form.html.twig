@@ -1,0 +1,31 @@
+{% block sw_el_block_ak_form_plugin %}
+
+
+    {% set forms = form.formFields.elements %}
+    {#{{ dump(form.formFields.elements) }}#}
+    <div class="container-fluid">
+        {% sw_include '@AkForm/storefront/utilities/check_message_after_submit.html.twig' %}
+
+        <div class="row justify-content-center mb-4">
+            <form action="{{ path('test.form.contact.send')|escape('html') }}" method="post" data-form-csrf-handler="true">
+                <div  class="form-group">
+                    <div class="form-group row  ">
+                        <label for="static" style="flex: 30%" class=" control-label p-1 ">test</label>
+                        <div class="" style="flex: 70%">
+                            <input type="text"
+                                   class="form-control  "
+                                   name="textname"
+                                   id="static"
+                                   value="">
+                        </div>
+                    </div>
+
+
+                    <input type="hidden" name="__referer__" id="__referer__" />
+                    {{ sw_csrf('test.form.contact.send') }}
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

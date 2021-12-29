@@ -1,0 +1,16 @@
+{% if app.session.get('Success') == "enable" %}
+    {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+        type:"success",
+        content:"Your message successfully registered",
+
+    } %}
+    {{ app.session.set('Success', 'disable') }}
+{% endif %}
+        {% if app.session.get('Error') != '' %}
+            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                type:"danger",
+                content:app.session.get('Error'),
+
+            } %}
+            {{ app.session.set('Error', '') }}
+        {% endif %}

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="TestForm\Controller\SubmitFormController" class="TestForm\Controller\SubmitFormController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+            <argument id="Shopware\Storefront\Page\GenericPageLoader" type="service"/>
+            <argument id="Shopware\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoader" type="service"/>
+            <argument id="TestForm\Storefront\Page\TestForm\TestFormPageLoader" type="service"/>
+            <argument type="service" id="test_form.repository"/>
+
+        </service>
+        <service id="TestForm\Core\Content\Form\FormDefinition">
+            <tag name="shopware.entity.definition" entity="test_form" />
+        </service>
+        <service id="TestForm\Storefront\Page\TestForm\TestFormPageLoader" public="true">
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader" />
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <!--<service id="TestForm\Subscriber\ResponseSubscriber">-->
+            <!--<argument type="service" id="Shopware\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface" />-->
+            <!--<argument id="TestForm\Storefront\Page\TestForm\TestFormPageLoader" type="service"/>-->
+            <!--<tag name="kernel.event_subscriber"/>-->
+        <!--</service>-->
+    </services>
+</container>
